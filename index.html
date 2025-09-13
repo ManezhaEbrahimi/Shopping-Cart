@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Shopping Cart – ES6 + DOM</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a class="sr-only" href="#main">Skip to main content</a>
+    <header>
+        <div class="wrap">
+            <div class="title">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M3 3h2l.4 2M7 13h9l3-8H6.4M7 13L5.4 5M7 13l-2 7h12m0 0a2 2 0 1 0 0-4m0 4a2 2 0 1 1 0-4"
+                        stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <h1>Shopping Cart · ES6 + DOM</h1>
+                <span class="badge">localStorage • map • reduce • template literals</span>
+            </div>
+            <div class="tools">
+                <div class="search" role="search">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="m21 21-3.9-3.9M10 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16Z" stroke="currentColor"
+                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <input id="q" type="search" placeholder="Search products... (Ctrl+/)" autocomplete="off" />
+                    <button id="clearQ" class="btn" title="Clear">Clear</button>
+                </div>
+                <button id="resetCart" class="btn danger" title="Empty cart">Empty Cart</button>
+            </div>
+        </div>
+    </header>
+    <main id="main" class="wrap">
+        <section class="panel products" aria-labelledby="h-products">
+            <h2 id="h-products">Products</h2>
+            <div id="productGrid" class="grid" aria-live="polite"></div>
+        </section>
+        <section class="panel cart" aria-labelledby="h-cart">
+            <h2 id="h-cart">Your Cart</h2>
+            <div class="cart-head">
+                <div>Item</div>
+                <div>Price</div>
+                <div>Qty</div>
+                <div>Subtotal</div>
+                <div></div>
+            </div>
+            <div id="cartBody" class="cart-body" aria-live="polite"></div>
+            <div class="totals">
+                <div class="muted">Total</div>
+                <div id="grandTotal" class="total-num">$0.00</div>
+            </div>
+        </section>
+    </main>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script src="script.js"></script>
+</body>
+</html>
